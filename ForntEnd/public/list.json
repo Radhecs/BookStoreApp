@@ -1,0 +1,92 @@
+[
+    {
+        "id":1,
+        "name":"DBMS Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":2,
+        "name":"operation System  Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":3,
+        "name":"software engineering Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":4,
+        "name":"Data structure Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":5,
+        "name":"maths Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":6,
+        "name":"scince Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    },
+     {
+        "id":7,
+        "name":"Food Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":200,
+        "category":"Food",
+        "image":"../public/FreeBook.jpg"
+    }, 
+    {
+        "id":8,
+        "name":"Music Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":90,
+        "category":"Song",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":9,
+        "name":"Sports Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":50,
+        "category":"Sports",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":10,
+        "name":"Comedy Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":20,
+        "category":"Entainment",
+        "image":"../public/FreeBook.jpg"
+    },
+    {
+        "id":11,
+        "name":"Story Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Free",
+        "image":"../public/FreeBook.jpg"
+    }
+
+
+]
