@@ -1,14 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import LoginForm from "./LoginForm.jsx";
+import axios from "axios";
+import toast from "react-hot-toast";
 function Signup() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:4001/user/signup", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("signup Successfully");
+          navigate(from, { replace: ture });
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          toast.error("Error:" + err.response.data.message);
+        }
+      });
+  };
   return (
     <>
       <div className="flex h-screen items-center justify-center border-[2px] shadow-md p-5 rounded-md  ">
@@ -24,17 +50,17 @@ function Signup() {
                 ✕
               </Link>
 
-              <h3 className="font-bold text-lg">Login</h3>
+              <h3 className="font-bold text-lg">Signup</h3>
               <div className="mt-4 space-y-2 ">
                 <span>Name</span>
                 <br />
                 <input
                   type="name"
                   placeholder="Enter your full Name"
-                  className="w-80 px-3 py-1 border rounded-md outline-none"
-                  {...register("name", { required: true })}
+                  className="w-80 px-3 py-1 border text-green-500 rounded-md outline-none"
+                  {...register("fullname", { required: true })}
                 />
-                {errors.name && (
+                {errors.fullname && (
                   <span className="text-sm text-red-500">
                     <br />
                     This field is required
@@ -49,7 +75,7 @@ function Signup() {
                 <input
                   type="email"
                   placeholder="Enter your Email"
-                  className="w-80 px-3 py-1 border rounded-md outline-none"
+                  className="w-80 px-3 py-1 border text-green-500 rounded-md outline-none"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
@@ -66,7 +92,7 @@ function Signup() {
                 <input
                   type="password"
                   placeholder="Enter your password"
-                  className="w-80 px-3 py-1 border rounded-md outline-none"
+                  className="w-80 px-3 py-1 border text-green-500 rounded-md outline-none"
                   {...register("password", { required: true })}
                 />
                 {errors.email && (
